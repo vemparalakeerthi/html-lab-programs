@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+ <title>Taking Input</title>
+
+</head>
+
+<body>
+
+ <h2>Input in JavaScript</h2>
+
+ Enter your name:
+
+ <input type="text" id="name">
+
+ <button onclick="getInput()">Submit</button>
+
+ <p id="result"></p>
+
+
+<script>
+   function getInput() {
+
+    var n = document.getElementById("name").value;   // textbox input
+
+    var c = prompt("Enter your city:");             // prompt input
+
+    var a = confirm("Are you a student?");          // confirm input
+
+
+     document.getElementById("result").innerHTML =
+
+      "Name: " + n + "<br>" +
+
+      "City: " + c + "<br>" +
+
+       "Student: " + a;
+
+   }
+
+</script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RegExp Object Example</title>
+</head>
+<body>
+
+<h2>RegExp Object Demo</h2>
+<button onclick="regexDemo()">Click Me</button>
+
+<p id="output"></p>
+
+<script>
+function regexDemo() {
+    let text = "JavaScript is fun and JavaScript is powerful";
+
+    // Creating RegExp object
+    let pattern = /JavaScript/g;
+
+    // Using RegExp methods
+    let testResult = pattern.test(text);       // true/false
+    let matchResult = text.match(pattern);     // returns matches
+    let replaceResult = text.replace(pattern, "JS"); // replace matches
+
+    document.getElementById("output").innerHTML =
+        "Original Text: " + text + "<br>" +
+        "Test Result: " + testResult + "<br>" +
+        "Matches: " + matchResult + "<br>" +
+        "Replaced Text: " + replaceResult;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Defined Object Example</title>
+</head>
+<body>
+
+<h2>User Defined Object Demo</h2>
+<button onclick="showDetails()">Click Me</button>
+
+<p id="output"></p>
+
+<script>
+// Constructor function
+function Student(name, age, marks) {
+    // Properties
+    this.name = name;
+    this.age = age;
+    this.marks = marks;
+
+    // Method
+    this.getDetails = function() {
+        return "Name: " + this.name + ", Age: " + this.age + ", Marks: " + this.marks;
+    };
+}
+
+// Accessor (getter & setter)
+Object.defineProperty(Student.prototype, "grade", {
+    get: function() {
+        return this.marks >= 50 ? "Pass" : "Fail";
+    },
+    set: function(value) {
+        this.marks = value;
+    }
+});
+
+function showDetails() {
+    // Creating object using constructor
+    let s1 = new Student("Afroz", 20, 75);
+
+    // Using method and accessor
+    let result = s1.getDetails() + "<br>Grade: " + s1.grade;
+
+    // Display output
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
